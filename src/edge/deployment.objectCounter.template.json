@@ -10,6 +10,11 @@
             "minDockerVersion": "v1.25",
             "loggingOptions": "",
             "registryCredentials": {
+              "lvacontainers": {
+                "username": "$CONTAINER_REGISTRY_USERNAME_testingacr",
+                "password": "$CONTAINER_REGISTRY_PASSWORD_testingacr",
+                "address": "lvacontainers.azurecr.io"
+              },
               "$CONTAINER_REGISTRY_USERNAME_myacr": {
                 "username": "$CONTAINER_REGISTRY_USERNAME_myacr",
                 "password": "$CONTAINER_REGISTRY_PASSWORD_myacr",
@@ -63,7 +68,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "avicvreg.azurecr.io/1.1:latest",
+              "image": "lvacontainers.azurecr.io/lvaedge:1.0.01235.809",
               "createOptions": {
                 "HostConfig": {
                   "LogConfig": {
@@ -145,7 +150,12 @@
         "aadResourceId": "https://management.core.windows.net/",
         "armEndpoint": "https://management.azure.com/",
         "diagnosticsEventsOutputName": "AmsDiagnostics",
-        "OperationalEventsOutputName": "AmsOperational"
+        "OperationalEventsOutputName": "AmsOperational",
+        "debugLogsDirectory": "/var/lib/azuremediaservices/debuglogs/",
+        "logLevel": "Information",
+        "logCategories": "Application,Event",
+        "AllowUnsecuredEndpoints": "true",
+        "TelemetryOptOut": false
       }
     },
     "objectCounter": {
