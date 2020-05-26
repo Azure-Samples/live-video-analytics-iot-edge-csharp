@@ -96,7 +96,8 @@
               "createOptions": {
                 "HostConfig": {
                   "Binds": [
-                    "$INPUT_VIDEO_FOLDER_ON_DEVICE:/live/mediaServer/media"
+                    "$INPUT_VIDEO_FOLDER_ON_DEVICE:/live/mediaServer/media",
+                    "/var/local/mediaservices/:/var/lib/azuremediaservices"
                   ]
                 }
               }
@@ -127,12 +128,11 @@
         "aadResourceId": "https://management.core.windows.net/",
         "armEndpoint": "https://management.azure.com/",
         "diagnosticsEventsOutputName": "AmsDiagnostics",
-        "OperationalEventsOutputName": "AmsOperational",
-        "debugLogsDirectory": "/var/lib/azuremediaservices/debuglogs/",
+        "operationalEventsOutputName": "AmsOperational",
         "logLevel": "Information",
         "logCategories": "Application,Event",
-        "AllowUnsecuredEndpoints": "true",
-        "TelemetryOptOut": false
+        "allowUnsecuredEndpoints": "true",
+        "telemetryOptOut": false
       }
     }
   }
