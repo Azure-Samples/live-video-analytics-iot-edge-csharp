@@ -74,7 +74,8 @@
                     }
                   },
                   "Binds": [
-                    "$OUTPUT_VIDEO_FOLDER_ON_DEVICE:/var/media/"
+                    "$OUTPUT_VIDEO_FOLDER_ON_DEVICE:/var/media/",
+                    "/var/local/mediaservices/:/var/lib/azuremediaservices/"
                   ]
                 }
               }
@@ -123,7 +124,7 @@
       "properties.desired": {
         "schemaVersion": "1.0",
         "routes": {
-          "objectCounterToIoTHub": "FROM /messages/modules/objectCounter/outputs/* INTO $upstream",
+          "ObjectCounterToIoTHub": "FROM /messages/modules/objectCounter/outputs/* INTO $upstream",
           "LVAToObjectCounter": "FROM /messages/modules/lvaEdge/outputs/detectedObjects INTO BrokeredEndpoint(\"/modules/objectCounter/inputs/detectedObjects\")",
           "LVADiagnosticsToIoTHub": "FROM /messages/modules/lvaEdge/outputs/AmsDiagnostics/* INTO $upstream",
           "LVAOperationalToIoTHub": "FROM /messages/modules/lvaEdge/outputs/AmsOperational/* INTO $upstream",
@@ -145,12 +146,11 @@
         "aadResourceId": "https://management.core.windows.net/",
         "armEndpoint": "https://management.azure.com/",
         "diagnosticsEventsOutputName": "AmsDiagnostics",
-        "OperationalEventsOutputName": "AmsOperational",
-        "debugLogsDirectory": "/var/lib/azuremediaservices/debuglogs/",
+        "operationalEventsOutputName": "AmsOperational",
         "logLevel": "Information",
         "logCategories": "Application,Event",
-        "AllowUnsecuredEndpoints": "true",
-        "TelemetryOptOut": false
+        "allowUnsecuredEndpoints": "true",
+        "telemetryOptOut": false
       }
     },
     "objectCounter": {
