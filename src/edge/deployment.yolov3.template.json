@@ -130,8 +130,8 @@
         "diagnosticsEventsOutputName": "AmsDiagnostics",
         "operationalEventsOutputName": "AmsOperational",
         "logLevel": "Information",
-        "logCategories": "Application,Event",
-        "allowUnsecuredEndpoints": "true",
+        "logCategories": "Application,Events",
+        "allowUnsecuredEndpoints": true,
         "telemetryOptOut": false
       }
     }
