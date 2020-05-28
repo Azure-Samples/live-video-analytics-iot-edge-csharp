@@ -59,7 +59,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/media/live-video-analytics:0.9.1",
+              "image": "mcr.microsoft.com/media/live-video-analytics:0.9.3",
               "createOptions": {
                 "HostConfig": {
                   "LogConfig": {
@@ -70,7 +70,8 @@
                     }
                   },
                   "Binds": [
-                    "$OUTPUT_VIDEO_FOLDER_ON_DEVICE:/var/media/"
+                    "$OUTPUT_VIDEO_FOLDER_ON_DEVICE:/var/media/",
+                    "$APPDATA_FOLDER_ON_DEVICE:/var/lib/azuremediaservices"
                   ]
                 }
               }
