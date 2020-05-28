@@ -117,12 +117,11 @@
         "aadResourceId": "https://management.core.windows.net/",
         "armEndpoint": "https://management.azure.com/",
         "diagnosticsEventsOutputName": "AmsDiagnostics",
-        "OperationalEventsOutputName": "AmsOperational",
-        "debugLogsDirectory": "/var/lib/azuremediaservices/debuglogs/",
+        "operationalEventsOutputName": "AmsOperational",        
         "logLevel": "Information",
         "logCategories": "Application,Event",
-        "AllowUnsecuredEndpoints": "true",
-        "TelemetryOptOut": false
+        "allowUnsecuredEndpoints": "true",
+        "telemetryOptOut": false
       }
     }
   }
