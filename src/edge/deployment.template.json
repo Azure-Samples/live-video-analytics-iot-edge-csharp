@@ -59,7 +59,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/media/live-video-analytics:1.0.0",
+              "image": "mcr.microsoft.com/media/live-video-analytics:1",
               "createOptions": {
                 "HostConfig": {
                   "LogConfig": {
@@ -120,8 +120,8 @@
         "diagnosticsEventsOutputName": "AmsDiagnostics",
         "operationalEventsOutputName": "AmsOperational",        
         "logLevel": "Information",
-        "logCategories": "Application,Event",
-        "allowUnsecuredEndpoints": "true",
+        "logCategories": "Application,Events",
+        "allowUnsecuredEndpoints": true,
         "telemetryOptOut": false
       }
     }
