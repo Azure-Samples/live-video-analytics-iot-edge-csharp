@@ -33,16 +33,18 @@ Running [LVA resources setup script](https://github.com/Azure/live-video-analyti
 Create a file named .env in src/edge folder and add the following text to it. Provide values for all variables.
 
 ```env
-CONTAINER_REGISTRY_USERNAME_myacr=""
-CONTAINER_REGISTRY_PASSWORD_myacr=""
 SUBSCRIPTION_ID=""
 RESOURCE_GROUP=""
 AMS_ACCOUNT=""
+IOTHUB_CONNECTION_STRING=""
 AAD_TENANT_ID=""
 AAD_SERVICE_PRINCIPAL_ID=""
 AAD_SERVICE_PRINCIPAL_SECRET=""
-OUTPUT_VIDEO_FOLDER_ON_DEVICE=""
 INPUT_VIDEO_FOLDER_ON_DEVICE=""
+OUTPUT_VIDEO_FOLDER_ON_DEVICE=""
+APPDATA_FOLDER_ON_DEVICE=""
+CONTAINER_REGISTRY_USERNAME_myacr=""
+CONTAINER_REGISTRY_PASSWORD_myacr=""
 ```
 
 Running [LVA resources setup script](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) generates the **.env** file with values pre-filled by the script.
