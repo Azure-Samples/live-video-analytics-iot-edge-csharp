@@ -24,8 +24,8 @@ Besides the modules already defined in deployment.yolov3.template.json, this dep
 The deployment manifest templates contains several variables (look for '$' symbol). The values for these variables need to be specified in the .env file, which like this
 
 ```env
-CONTAINER_REGISTRY_USERNAME_myacr="" 
-CONTAINER_REGISTRY_PASSWORD_myacr="" 
+CONTAINER_REGISTRY_USERNAME_myacr=""
+CONTAINER_REGISTRY_PASSWORD_myacr=""
 SUBSCRIPTION_ID=""
 RESOURCE_GROUP=""
 AMS_ACCOUNT=""
