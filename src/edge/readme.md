@@ -1,4 +1,4 @@
-# IoT Edge sample solution
+# IoT Edge samples
 
 This folder contains IoT Edge deployment manifest templates and sample IoT Edge modules.
 
@@ -9,42 +9,42 @@ This folder contains IoT Edge deployment manifest templates and sample IoT Edge 
 This file is a deployment manifest template that has the following modules defined in it
 
 * rtspsim - [RTSP simulator module](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555)
-* lvaEdge - Live video analytics on IoT Edge module
+* lvaEdge - Live Video Analytics on IoT Edge module
 
 ### deployment.yolov3.template.json
 
-Besides the modules already defined in deployment.template.json, this deployment manifest template references the [yolov3 module](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx) that hosts the YoloV3 ONNX model with http server.
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [yolov3 module](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx). This is an IoT Edge module that runs the YoloV3 ONNX model behind an HTTP endpoint.
 
 ### deployment.objectCounter.template.json
 
-Besides the modules already defined in deployment.yolov3.template.json, this deployment manifest template references the sample objectCounter module (source code for which can be found in ./modules/objectCounter). This template also has message routes defined to send messages from the lvaEdge module to the objectCounter module and vice versa, to enable the scenario of recording video clips when objects of a specified type and above a specified threshold value are found.
+In addition to the modules defined in deployment.yolov3.template.json, this deployment manifest template includes the sample objectCounter module (source code for which can be found in ./modules/objectCounter). This template also has message routes defined to send messages from the lvaEdge module to the objectCounter module and vice versa, to enable the scenario of recording video clips when objects of a specified type (at a confidence measure above a specified threshold) value are found. See [this](https://docs.microsoft.com/azure/media-services/live-video-analytics-edge/event-based-video-recording-tutorial) tutorial on using this template.
 
 ## Deployment manifest template variables
 
-The deployment manifest templates contains several variables (look for '$' symbol). The values for these variables need to be specified in the .env file, which like this
+The deployment manifest templates contains several variables (look for '$' symbol). The values for these variables need to be specified in a .env file that you should create in the same folder as the template files. This file should like the following
 
 ```env
-SUBSCRIPTION_ID=""
-RESOURCE_GROUP=""
-AMS_ACCOUNT=""
-IOTHUB_CONNECTION_STRING=""
-AAD_TENANT_ID=""
-AAD_SERVICE_PRINCIPAL_ID=""
-AAD_SERVICE_PRINCIPAL_SECRET=""
-INPUT_VIDEO_FOLDER_ON_DEVICE=""
-OUTPUT_VIDEO_FOLDER_ON_DEVICE=""
-APPDATA_FOLDER_ON_DEVICE=""
-CONTAINER_REGISTRY_USERNAME_myacr=""
-CONTAINER_REGISTRY_PASSWORD_myacr=""
+SUBSCRIPTION_ID="<your Azure subscription id>"
+RESOURCE_GROUP="<your resource group name>"
+AMS_ACCOUNT="<name of your Media Services account>"
+IOTHUB_CONNECTION_STRING="<IoT Hub connection string>"
+AAD_TENANT_ID="<your AAD tenant ID>"
+AAD_SERVICE_PRINCIPAL_ID="<your AAD service principal id>"
+AAD_SERVICE_PRINCIPAL_SECRET="<your AAD service principal secret>"
+INPUT_VIDEO_FOLDER_ON_DEVICE="<a folder on your edge device with MKV files, used by RTSP simulator>"
+OUTPUT_VIDEO_FOLDER_ON_DEVICE="<a folder on your edge device used for recording video clips>"
+APPDATA_FOLDER_ON_DEVICE="<a folder on your edge device used for storing application data>"
+CONTAINER_REGISTRY_USERNAME_myacr="<user name for your Azure Container Registry>"
+CONTAINER_REGISTRY_PASSWORD_myacr="<password for the registry>"
 ```
 
-To generate a deployment manifest from the template, open your local clone of this git repository in Visual Studio Code, have the [Azure Iot Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) extension installed, right click on the template file and select "Generate IoT Edge deployment manifest". This will create the corresponding deployment manifest file in **./config** folder.
+To generate a deployment manifest from the template, open your local clone of this git repository in Visual Studio Code, have the [Azure Iot Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) extension installed. Create and fill out an .env file with the required valies. Then right click on the template file and select "Generate IoT Edge deployment manifest". This will create the corresponding deployment manifest file in a **./config** folder.
 
 ## Sample edge modules
 
 ### objectCounter
 
-The folder **./modules/objectCounter** contains source code for an IoT Edge module that counts objects of a specified type and above a specified threshold value (these are specified as twin properties in deployment.objectCounter.template.json). The module expects messages emitted by yolov3 module (referenced above).
+The folder **./modules/objectCounter** contains source code for an IoT Edge module that counts objects of a specified type and with a confidence above a specified threshold value (these are specified as twin properties in deployment.objectCounter.template.json). The module expects messages emitted by yolov3 module (referenced above).
 
 ## Learn more
 
