@@ -24,16 +24,18 @@ Besides the modules already defined in deployment.yolov3.template.json, this dep
 The deployment manifest templates contains several variables (look for '$' symbol). The values for these variables need to be specified in the .env file, which like this
 
 ```env
-CONTAINER_REGISTRY_USERNAME_myacr="" 
-CONTAINER_REGISTRY_PASSWORD_myacr="" 
 SUBSCRIPTION_ID=""
 RESOURCE_GROUP=""
 AMS_ACCOUNT=""
+IOTHUB_CONNECTION_STRING=""
 AAD_TENANT_ID=""
 AAD_SERVICE_PRINCIPAL_ID=""
 AAD_SERVICE_PRINCIPAL_SECRET=""
-OUTPUT_VIDEO_FOLDER_ON_DEVICE=""
 INPUT_VIDEO_FOLDER_ON_DEVICE=""
+OUTPUT_VIDEO_FOLDER_ON_DEVICE=""
+APPDATA_FOLDER_ON_DEVICE=""
+CONTAINER_REGISTRY_USERNAME_myacr=""
+CONTAINER_REGISTRY_PASSWORD_myacr=""
 ```
 
 To generate a deployment manifest from the template, open your local clone of this git repository in Visual Studio Code, have the [Azure Iot Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) extension installed, right click on the template file and select "Generate IoT Edge deployment manifest". This will create the corresponding deployment manifest file in **./config** folder.
