@@ -61,4 +61,4 @@ Detailed instructions for running the sample can be found in the quickstarts (su
 
 ## Next steps
 
-Experiment with different [graph topologies](https://docs.microsoft.com/azure/media-services/live-video-analytics-edge/media-graph-concept.md#media-graph-topologies-and-instances) by modifying operations.json.
+Experiment with different [graph topologies](https://docs.microsoft.com/azure/media-services/live-video-analytics-edge/media-graph-concept#media-graph-topologies-and-instances) by modifying operations.json.
