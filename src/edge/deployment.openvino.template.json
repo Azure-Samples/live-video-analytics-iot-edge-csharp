@@ -84,14 +84,8 @@
             "settings": {
               "image": "marketplace.azurecr.io/intel_corporation/open_vino:latest",
               "createOptions": {
-                "HostConfig": {
-                  "PortBindings": {
-                    "4000/tcp": [
-                      {
-                        "HostPort":"4000"
-                      }
-                    ]
-                  }
+                "ExposedPorts": {
+                  "4000/tcp": {}
                 },
                 "Cmd": ["/ams_wrapper/start_ams.py","--ams_port=4000","--ovms_port=9000"]
               }
