@@ -15,6 +15,10 @@ This file is a deployment manifest template that has the following modules defin
 
 In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [yolov3 module](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx). This is an IoT Edge module that runs the YoloV3 ONNX model behind an HTTP endpoint.
 
+### deployment.customvision.template.json
+
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes the toy truck detector model built using [Custom vision](https://www.customvision.ai/). This is an IoT Edge module that runs the Custom Vision model behind an HTTP endpoint.This template is used in [this](https://docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/custom-vision-tutorial) tutorial that gives you training data for the toy truck detector custom vision model and outlines instructions on training the model, uploading to your own Azure container registry and deploying it to the edge. 
+
 ### deployment.grpcyolov3icpu.template.json  
 
 In addition to the modules defined in deployment.template.json, this deployment manifest template includes this [yolov3 module](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/notebooks/Yolo/yolov3/yolov3-grpc-icpu-onnx/lvaextension). This IoT Edge module runs the YoloV3 ONNX model behind a gRPC endpoint. This template is used in [this](https://aka.ms/lva-grpc-quickstart) quickstart.
