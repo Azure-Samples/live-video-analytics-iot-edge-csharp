@@ -160,10 +160,10 @@
 							"EULA": {
 								"value": "accept"
 							},
-							"BILLING_ENDPOINT": {
+							"BILLING": {
 								"value": "<Use endpoint from Archon azure resource (overview page)>"
 							},
-							"API_KEY": {
+							"APIKEY": {
 								"value": "<Use one key from Archon azure resource (keys page)>"
 							}
 						}
