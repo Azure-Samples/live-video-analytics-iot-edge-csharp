@@ -115,7 +115,7 @@
 						"status": "running",
 						"restartPolicy": "always",
 						"settings": {
-							"image": "mcr.microsoft.com/azure-cognitive-services/vision/spatial-analysis:latest",
+							"image": "mcr.microsoft.com/azure-cognitive-services/vision/spatial-analysis:1.0",
 							"createOptions": {
 								"HostConfig": {
 									"PortBindings": {
@@ -160,10 +160,10 @@
 							"EULA": {
 								"value": "accept"
 							},
-							"BILLING": {
+							"BILLING_ENDPOINT": {
 								"value": "<Use endpoint from Archon azure resource (overview page)>"
 							},
-							"APIKEY": {
+							"API_KEY": {
 								"value": "<Use one key from Archon azure resource (keys page)>"
 							}
 						}
