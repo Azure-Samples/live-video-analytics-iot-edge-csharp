@@ -1,5 +1,5 @@
 
-:bangbang: | No new features are being added here. For the latest verison of the service, see [Azure Video Analyzer](https://github.com/Azure/video-analyzer) and the [Csharp sample](https://github.com/Azure-Samples/video-analyzer-iot-edge-csharp)
+:bangbang: | No new features are being added here. For the latest version of the service, see [Azure Video Analyzer](https://github.com/Azure/video-analyzer) and the [Csharp sample](https://github.com/Azure-Samples/video-analyzer-iot-edge-csharp)
 :---: | :---
 
 ---
